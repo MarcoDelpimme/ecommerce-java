@@ -20,6 +20,7 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
+
         try (Connection conn = DBUtil.getConnection()) {
             String query = "SELECT * FROM user WHERE email = ? AND password = ?";
             try (PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -28,12 +29,14 @@ public class LoginServlet extends HttpServlet {
                 ResultSet rs = stmt.executeQuery();
 
                 if (rs.next()) {
+                    int id = rs.getInt("id");
                     String role = rs.getString("role");
 
                     HttpSession session = request.getSession();
                     session.setMaxInactiveInterval(1000);
                     session.setAttribute("email", email);
                     session.setAttribute("role", role);
+                    session.setAttribute("userId", id);
 
 
                     if ("admin".equals(role)) {

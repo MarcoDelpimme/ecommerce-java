@@ -3,13 +3,8 @@
 Product product = (Product) request.getAttribute("product");
 %>
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Update product</title>
-</head>
-<body>
+<%@ include file="header.jsp" %>
+
 <form action="updateProduct" method="post">
     <input type="hidden" name="id" value="<%= product.getId() %>">
     <label for="name">Name:</label>
@@ -37,5 +32,4 @@ Product product = (Product) request.getAttribute("product");
     <br>
     <button type="submit">Update</button>
 </form>
-</body>
-</html>
+<%@ include file="footer.jsp" %></html>

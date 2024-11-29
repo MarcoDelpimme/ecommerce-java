@@ -1,9 +1,10 @@
-<html>
-<body>
-<h2>Hello World!</h2>
+<!doctype html>
+<%@ include file="header.jsp" %>
+
+
 <a href="register.jsp">Register</a>
 <a href="login.jsp">Login</a>
 <a href="logout">Logout</a>
 
-</body>
+<%@ include file="footer.jsp" %>
 </html>

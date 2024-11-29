@@ -1,10 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add Product</title>
-</head>
+<%@ include file="header.jsp" %>
 <body>
 <h1>Add Product</h1>
 <form action="addProduct" method="post">
@@ -33,5 +28,5 @@
     <br>
     <input type="submit" value="Add Product">
 </form>
-</body>
+<%@ include file="footer.jsp" %>
 </html>
